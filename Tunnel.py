@@ -18,7 +18,6 @@ def postKMC(msg, channel="C29T0SANS"):
         channel=channel,
         text=msg,
         icon_emoji=":mawarunos:",
-        unfurl_links=unfurl,
         username="KC3bot"
     )
 
