@@ -23,10 +23,15 @@ def postKMC(msg, channel="C29T0SANS"):
 
 def tunnelToKMC(rtm):
     try:
-        postKMC(rtm["text"])
+        postKMC(escapeAtchannel(rtm["text"]))
     except: # 一回だけリトライ
         time.sleep(5)
-        postKMC(rtm["text"])
+        postKMC(escapeAtchannel(rtm["text"]))
+
+
+def escapeAtchannel(text):
+    res = text.replace("!", "！")
+    return res
 
 
 if __name__ == "__main__":
